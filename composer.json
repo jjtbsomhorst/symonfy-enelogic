@@ -1,0 +1,20 @@
+{
+    "name": "jjtbsomhorst/enelogic",
+    "description": "Enelogic api client",
+    "type": "library",
+    "license": "unlicensed",
+    "autoload": {
+        "psr-4": {
+            "Jjtbsomhorst\\Enelogic\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jjtb somhorst"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "kamermans/guzzle-oauth2-subscriber": "^1.0"
+    }
+}
