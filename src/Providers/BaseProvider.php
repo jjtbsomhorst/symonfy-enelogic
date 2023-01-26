@@ -66,7 +66,7 @@ class BaseProvider implements IEntityProvider
     /**
      * @throws \Exception
      */
-    public function listItems($params = []): array
+    public function listItems(): array
     {
         return $this->doListRequest($this->listEndpoint);
     }

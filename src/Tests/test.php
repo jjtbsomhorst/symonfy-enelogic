@@ -1,6 +1,10 @@
 <?php
 
 use App\Enelogic\Client\EneLogicClient;
+use kamermans\OAuth2\Persistence\FileTokenPersistence;
 
-$client = new EneLogicClient(null,'','');
-$client->buildings()->getItem('');
+$persistence = new FileTokenPersistence('');
+$client = new EneLogicClient($persistence,'','');
+
+$building = $client->buildings()->getItem('');
+

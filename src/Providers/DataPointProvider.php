@@ -9,6 +9,9 @@ use GuzzleHttp\Client;
 class DataPointProvider extends BaseProvider
 {
     CONST PRIMARY_PARAM = "measuringpoints";
+    private string $listByDayEndpoint;
+    private string $listByMonth;
+
     public function __construct(Client $client)
     {
         parent::__construct($client, self::PRIMARY_PARAM,new DataPointEntityDecoder());

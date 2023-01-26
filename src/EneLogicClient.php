@@ -60,7 +60,7 @@ class EneLogicClient
     }
 
     public function buildings() : IEntityProvider {
-        return new BaseProvsider($this->client, 'buildings', new BuildingEntityDecoder());
+        return new BaseProvider($this->client, 'buildings', new BuildingEntityDecoder());
     }
 
     public function dataPoints() {

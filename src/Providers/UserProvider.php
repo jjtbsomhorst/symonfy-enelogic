@@ -14,7 +14,7 @@ class UserProvider extends BaseProvider
         parent::__construct($client, self::PRIMARY_PARAM, new UserEntityDecoder());
     }
 
-    public function listItems($params = []): array
+    public function listItems(): array
     {
         return [parent::getItem("")];
     }
