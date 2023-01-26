@@ -4,7 +4,7 @@ namespace App\Enelogic\Client\Model;
 
 class EnelogicMeasuringDevice extends EnelogicEntity
 {
-    public function __construct(private ?int $id, public string $name, public string $alias)
+    public function __construct(private ?int $id, private string $name, private string $alias)
     {
         parent::__construct($id);
     }

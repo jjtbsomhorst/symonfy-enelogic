@@ -22,9 +22,9 @@ use kamermans\OAuth2\Signer\AccessToken\QueryString;
 class EneLogicClient
 {
     private Client $client;
+    const BASEURL = "https://enelogic.com/api";
 
     public function __construct(
-        private string $baseurl = 'https://enelogic.com/api/',
         private TokenPersistenceInterface $persistence,
         private string $enelogicAppId,
         private string $enelogicAppSecret
@@ -52,28 +52,28 @@ class EneLogicClient
         $stack->push($oauth);
 
         $this->client = new Client([
-            'base_uri'  => $this->baseurl,
+            'base_uri'  => self::BASEURL,
             'headers'   => [ 'Content-Type' => 'application/json'],
             'handler'  => $stack,
             'auth'     => 'oauth',
         ]);
     }
 
-    public function getBuildingProvider() : IEntityProvider {
-        return new BaseProvider($this->client, 'buildings', new BuildingEntityDecoder());
+    public function buildings() : IEntityProvider {
+        return new BaseProvsider($this->client, 'buildings', new BuildingEntityDecoder());
     }
 
-    public function getDataPointProvider() {
+    public function dataPoints() {
         return new DataPointProvider($this->client);
     }
-    public function getMeasurePointProvider() {
+    public function measurePoints() {
         return new MeasuringPointProvider($this->client);
     }
-    public function getDeviceProvider () {
+    public function devices () {
         return new DeviceProvider($this->client);
     }
 
-    public function getOrganisationProvider () {
+    public function organisations () {
         return new OrganisationProvider($this->client);
     }
 

@@ -16,10 +16,7 @@ class EnelogicMeasuringPoint extends EnelogicEntity
                                 private ?string $yearMin,
                                 private ?string $yearMax,
                                 private ?string $timezone,
-                                private ?bool $active,
-                                private ?string $created,
-                                private ?bool $generation,
-                                private ?int $isCalculationMeter)
+                                private ?bool $active)
     {
         parent::__construct($id);
     }
