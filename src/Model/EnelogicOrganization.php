@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enelogic\Client\Model;
+namespace jjtbsomhorst\enelogic\Client\Model;
 
 class EnelogicOrganization extends EnelogicEntity
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Client\Providers;
 
-use App\Enelogic\Client\Model\EnelogicEntity;
+use jjtbsomhorst\enelogic\Client\Model\EnelogicEntity;
 
 interface IEntityProvider
 {

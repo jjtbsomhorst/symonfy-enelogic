@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enelogic\Client\Decoders;
+namespace jjtbsomhorst\enelogic\Client\Decoders;
 
 abstract class BaseDecoder
 {

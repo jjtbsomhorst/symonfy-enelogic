@@ -35,5 +35,9 @@ $buildings = $client->buildings()->list();
 // get a single building
 
 $building = $client->buildings()->single($id);
+```
 
+Testing was done using the php cli docker
 
+docker run --rm --interactive --tty --volume ${PWD}:/app composer validate
+docker run --rm -it --volume ${PWD}:/usr/src/myapp -w /usr/src/myapp php:7.4-cli php your-script.php

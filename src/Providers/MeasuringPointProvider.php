@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Client\Providers;
 
-use App\Enelogic\Client\Decoders\MeasuringPointEntityDecoder;
+use jjtbsomhorst\enelogic\Client\Decoders\MeasuringPointEntityDecoder;
 use GuzzleHttp\Client;
 
 class MeasuringPointProvider extends BaseProvider

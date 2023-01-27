@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Client\Providers;
 
-use App\Enelogic\Client\Decoders\BaseDecoder;
-use App\Enelogic\Client\Decoders\DataPointEntityDecoder;
+use jjtbsomhorst\enelogic\Client\Decoders\BaseDecoder;
+use jjtbsomhorst\enelogic\Client\Decoders\DataPointEntityDecoder;
 use GuzzleHttp\Client;
 
 class DataPointProvider extends BaseProvider

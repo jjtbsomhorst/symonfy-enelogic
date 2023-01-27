@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Enelogic\Client;
+namespace jjtbsomhorst\enelogic;
 
-use App\Enelogic\Client\Decoders\BuildingEntityDecoder;
-use App\Enelogic\Client\Decoders\MeasuringPointEntityDecoder;
-use App\Enelogic\Client\Providers\BaseProvider;
-use App\Enelogic\Client\Providers\DataPointProvider;
-use App\Enelogic\Client\Providers\DeviceProvider;
-use App\Enelogic\Client\Providers\IEntityProvider;
-use App\Enelogic\Client\Providers\MeasuringPointProvider;
-use App\Enelogic\Client\Providers\OrganisationProvider;
-use App\Enelogic\Client\Providers\UserProvider;
+use jjtbsomhorst\enelogic\Client\Decoders\BuildingEntityDecoder;
+use jjtbsomhorst\enelogic\Client\Decoders\MeasuringPointEntityDecoder;
+use jjtbsomhorst\enelogic\Client\Providers\BaseProvider;
+use jjtbsomhorst\enelogic\Client\Providers\DataPointProvider;
+use jjtbsomhorst\enelogic\Client\Providers\DeviceProvider;
+use jjtbsomhorst\enelogic\Client\Providers\IEntityProvider;
+use jjtbsomhorst\enelogic\Client\Providers\MeasuringPointProvider;
+use jjtbsomhorst\enelogic\Client\Providers\OrganisationProvider;
+use jjtbsomhorst\enelogic\Client\Providers\UserProvider;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use kamermans\OAuth2\GrantType\RefreshToken;

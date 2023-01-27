@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Enelogic\Client\Decoders;
+namespace jjtbsomhorst\enelogic\Client\Decoders;
 
-use App\Enelogic\Client\Model\EnelogicBuilding;
+use jjtbsomhorst\enelogic\Client\Model\EnelogicBuilding;
 
 class BuildingEntityDecoder extends BaseDecoder
 {
