@@ -1,9 +1,9 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Decoders;
+namespace jjtbsomhorst\enelogic\Decoders;
 
-use jjtbsomhorst\enelogic\Client\Model\EnelogicDateDataPoint;
-use jjtbsomhorst\enelogic\Client\Model\EnelogicDateTimeDataPoint;
+use jjtbsomhorst\enelogic\Model\EnelogicDateDataPoint;
+use jjtbsomhorst\enelogic\Model\EnelogicDateTimeDataPoint;
 
 class DataPointEntityDecoder extends BaseDecoder
 {

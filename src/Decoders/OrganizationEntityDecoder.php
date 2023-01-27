@@ -1,10 +1,10 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Decoders;
+namespace jjtbsomhorst\enelogic\Decoders;
 
-use jjtbsomhorst\enelogic\Client\Model\EnelogicMeasuringDevice;
-use jjtbsomhorst\enelogic\Client\Model\EnelogicMeasuringPoint;
-use jjtbsomhorst\enelogic\Client\Model\EnelogicOrganization;
+use jjtbsomhorst\enelogic\Model\EnelogicMeasuringDevice;
+use jjtbsomhorst\enelogic\Model\EnelogicMeasuringPoint;
+use jjtbsomhorst\enelogic\Model\EnelogicOrganization;
 
 class OrganizationEntityDecoder extends BaseDecoder
 {

@@ -1,9 +1,10 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Providers;
 
-use jjtbsomhorst\enelogic\Client\Decoders\BaseDecoder;
-use jjtbsomhorst\enelogic\Client\Model\EnelogicEntity;
+use jjtbsomhorst\enelogic\Decoders\BaseDecoder;
+use jjtbsomhorst\enelogic\Exceptions\EnelogicProviderException;
+use jjtbsomhorst\enelogic\Model\EnelogicEntity;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 

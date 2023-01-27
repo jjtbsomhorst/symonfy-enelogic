@@ -1,9 +1,9 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Providers;
 
-use jjtbsomhorst\enelogic\Client\Decoders\BaseDecoder;
-use jjtbsomhorst\enelogic\Client\Decoders\OrganizationEntityDecoder;
+use jjtbsomhorst\enelogic\Decoders\BaseDecoder;
+use jjtbsomhorst\enelogic\Decoders\OrganizationEntityDecoder;
 use GuzzleHttp\Client;
 
 class OrganisationProvider extends BaseProvider

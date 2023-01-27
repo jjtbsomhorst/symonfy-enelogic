@@ -2,27 +2,25 @@
 
 namespace jjtbsomhorst\enelogic;
 
-use jjtbsomhorst\enelogic\Client\Decoders\BuildingEntityDecoder;
-use jjtbsomhorst\enelogic\Client\Decoders\MeasuringPointEntityDecoder;
-use jjtbsomhorst\enelogic\Client\Providers\BaseProvider;
-use jjtbsomhorst\enelogic\Client\Providers\DataPointProvider;
-use jjtbsomhorst\enelogic\Client\Providers\DeviceProvider;
-use jjtbsomhorst\enelogic\Client\Providers\IEntityProvider;
-use jjtbsomhorst\enelogic\Client\Providers\MeasuringPointProvider;
-use jjtbsomhorst\enelogic\Client\Providers\OrganisationProvider;
-use jjtbsomhorst\enelogic\Client\Providers\UserProvider;
+use jjtbsomhorst\enelogic\Decoders\BuildingEntityDecoder;
+use jjtbsomhorst\enelogic\Providers\BaseProvider;
+use jjtbsomhorst\enelogic\Providers\DataPointProvider;
+use jjtbsomhorst\enelogic\Providers\DeviceProvider;
+use jjtbsomhorst\enelogic\Providers\IEntityProvider;
+use jjtbsomhorst\enelogic\Providers\MeasuringPointProvider;
+use jjtbsomhorst\enelogic\Providers\OrganisationProvider;
+use jjtbsomhorst\enelogic\Providers\UserProvider;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use kamermans\OAuth2\GrantType\RefreshToken;
 use kamermans\OAuth2\OAuth2Middleware;
-use kamermans\OAuth2\Persistence\FileTokenPersistence;
 use kamermans\OAuth2\Persistence\TokenPersistenceInterface;
 use kamermans\OAuth2\Signer\AccessToken\QueryString;
 
 class EneLogicClient
 {
     private Client $client;
-    const BASEURL = "https://enelogic.com/api";
+    const BASEURL = "https://enelogic.com/api/";
 
     public function __construct(
         private TokenPersistenceInterface $persistence,

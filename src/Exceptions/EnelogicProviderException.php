@@ -1,6 +1,6 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Exceptions;
 
 class EnelogicProviderException extends \Exception
 {

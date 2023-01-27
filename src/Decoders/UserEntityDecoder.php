@@ -1,8 +1,8 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Decoders;
+namespace jjtbsomhorst\enelogic\Decoders;
 
-use jjtbsomhorst\enelogic\Client\Model\EnelogicUser;
+use jjtbsomhorst\enelogic\Model\EnelogicUser;
 
 class UserEntityDecoder extends BaseDecoder
 {

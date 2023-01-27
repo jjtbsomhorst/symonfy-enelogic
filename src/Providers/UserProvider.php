@@ -1,9 +1,9 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Providers;
 
-use jjtbsomhorst\enelogic\Client\Decoders\UserEntityDecoder;
-use jjtbsomhorst\enelogic\Client\Model\EnelogicEntity;
+use jjtbsomhorst\enelogic\Decoders\UserEntityDecoder;
+use jjtbsomhorst\enelogic\Model\EnelogicEntity;
 use GuzzleHttp\Client;
 
 class UserProvider extends BaseProvider

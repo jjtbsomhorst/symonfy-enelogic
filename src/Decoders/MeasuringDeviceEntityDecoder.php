@@ -1,8 +1,8 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Decoders;
+namespace jjtbsomhorst\enelogic\Decoders;
 
-use jjtbsomhorst\enelogic\Client\Model\EnelogicMeasuringDevice;
+use jjtbsomhorst\enelogic\Model\EnelogicMeasuringDevice;
 
 class MeasuringDeviceEntityDecoder extends BaseDecoder
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Providers;
 
-use jjtbsomhorst\enelogic\Client\Decoders\BaseDecoder;
-use jjtbsomhorst\enelogic\Client\Decoders\MeasuringDeviceEntityDecoder;
+use jjtbsomhorst\enelogic\Decoders\BaseDecoder;
+use jjtbsomhorst\enelogic\Decoders\MeasuringDeviceEntityDecoder;
 use GuzzleHttp\Client;
 
 class DeviceProvider extends BaseProvider

@@ -1,8 +1,8 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Providers;
+namespace jjtbsomhorst\enelogic\Providers;
 
-use jjtbsomhorst\enelogic\Client\Model\EnelogicEntity;
+use jjtbsomhorst\enelogic\Model\EnelogicEntity;
 
 interface IEntityProvider
 {

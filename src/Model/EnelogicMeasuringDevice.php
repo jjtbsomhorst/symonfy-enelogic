@@ -1,6 +1,6 @@
 <?php
 
-namespace jjtbsomhorst\enelogic\Client\Model;
+namespace jjtbsomhorst\enelogic\Model;
 
 class EnelogicMeasuringDevice extends EnelogicEntity
 {
