@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase;
 final class ClientTest extends TestCase
 {
     private ?TokenPersistenceInterface $persistence;
+    private ?EneLogicClient $client = null;
+
     public function setUp(): void
     {
         parent::setUp();
@@ -16,15 +18,21 @@ final class ClientTest extends TestCase
         if (!$this->persistence->hasToken()) {
             throw new Exception("Toke not found at path..");
         }
+
+        $this->client = new EneLogicClient($this->persistence, $_ENV['ENELOGIC_APPLICATION_ID'],$_ENV['ENELOGIC_APPLICATION_SECRET']);
     }
 
     public function testDevices(){
-        print_r("hello");
-        $client = new EneLogicClient($this->persistence, $_ENV['ENELOGIC_APPLICATION_ID'],$_ENV['ENELOGIC_APPLICATION_SECRET']);
-        $devices = $client->devices()->listItems();
 
-        print_r($devices);
+        $devices = $this->client->devices()->listItems();
         self::assertNotEmpty($devices);
     }
+
+    public function testUser(){
+        $users = $this->client->getUserProvider()->listItems();
+        print_r($users);
+        self::assertNotEmpty($users);
+    }
+
 
 }
