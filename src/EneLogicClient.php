@@ -5,6 +5,7 @@ namespace jjtbsomhorst\enelogic;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\MessageFormatter;
 use jjtbsomhorst\enelogic\Decoders\BuildingEntityDecoder;
+use jjtbsomhorst\enelogic\Exceptions\EnelogicTokenException;
 use jjtbsomhorst\enelogic\Providers\BaseProvider;
 use jjtbsomhorst\enelogic\Providers\DataPointProvider;
 use jjtbsomhorst\enelogic\Providers\DeviceProvider;
@@ -36,6 +37,9 @@ class EneLogicClient
         $this->setUp();
     }
 
+    /**
+     * @throws EnelogicTokenException
+     */
     private function setUp(){
 
         $reauthclient = new Client([
@@ -48,6 +52,11 @@ class EneLogicClient
             "scope" => "account", // optional
             "state" => time(), // optional
         ];
+
+
+        if (!$this->persistence->hasToken()) {
+           throw new EnelogicTokenException("Could not find access token");
+        }
 
         $oauth = new OAuth2Middleware(new RefreshToken($reauthclient, $reauth_config));
         $oauth->setTokenPersistence($this->persistence);
