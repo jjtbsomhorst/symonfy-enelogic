@@ -29,8 +29,7 @@ class BaseProvider implements IEntityProvider
                 throw new \Exception("Iets ging er mis..");
             }
             $data = $response->getBody();
-            $jsonData = $data->getContents();
-            return $this->decoderClass->decodeList($jsonData);
+            return $this->decoderClass->decodeList($data);
         } catch (GuzzleException $e) {
             throw new EnelogicProviderException($e);
         }
@@ -49,8 +48,7 @@ class BaseProvider implements IEntityProvider
                 throw new \Exception("Iets ging er mis..");
             }
 
-            $data = $response->getBody()->getContents();
-            return $this->decoderClass->decodeEntity(json_decode($data, true));
+            return $this->decoderClass->decodeEntity(json_decode($response->getBody(), true));
         } catch (GuzzleException $e) {
             throw new EnelogicProviderException($e);
         }

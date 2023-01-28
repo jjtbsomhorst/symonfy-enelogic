@@ -2,6 +2,8 @@
 
 namespace jjtbsomhorst\enelogic;
 
+use GuzzleHttp\Middleware;
+use GuzzleHttp\MessageFormatter;
 use jjtbsomhorst\enelogic\Decoders\BuildingEntityDecoder;
 use jjtbsomhorst\enelogic\Providers\BaseProvider;
 use jjtbsomhorst\enelogic\Providers\DataPointProvider;
@@ -16,16 +18,20 @@ use kamermans\OAuth2\GrantType\RefreshToken;
 use kamermans\OAuth2\OAuth2Middleware;
 use kamermans\OAuth2\Persistence\TokenPersistenceInterface;
 use kamermans\OAuth2\Signer\AccessToken\QueryString;
+use Psr\Log\LoggerInterface;
 
 class EneLogicClient
 {
     private Client $client;
     const BASEURL = "https://enelogic.com/api/";
 
+    const LOGGING_FORMAT = "{target} - {request} - {response}";
+
     public function __construct(
         private TokenPersistenceInterface $persistence,
         private string $enelogicAppId,
-        private string $enelogicAppSecret
+        private string $enelogicAppSecret,
+        private ?LoggerInterface $logger = null
     ){
         $this->setUp();
     }
@@ -47,7 +53,13 @@ class EneLogicClient
         $oauth->setTokenPersistence($this->persistence);
         $oauth->setAccessTokenSigner(new QueryString());
         $stack = HandlerStack::create();
+        if ($this->logger !== null) {
+            $stack->push(Middleware::log($this->logger, new MessageFormatter(EnelogicClient::LOGGING_FORMAT)));
+        }
         $stack->push($oauth);
+
+
+
 
         $this->client = new Client([
             'base_uri'  => self::BASEURL,
@@ -55,6 +67,9 @@ class EneLogicClient
             'handler'  => $stack,
             'auth'     => 'oauth',
         ]);
+
+
+
     }
 
     public function buildings() : IEntityProvider {
