@@ -13,7 +13,6 @@ final class ClientTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        error_log(getcwd());
         $this->persistence = new \kamermans\OAuth2\Persistence\FileTokenPersistence("/app/assets/access_token.json");
         if (!$this->persistence->hasToken()) {
             throw new Exception("Toke not found at path..");
