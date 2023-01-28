@@ -29,8 +29,7 @@ final class ClientTest extends TestCase
     }
 
     public function testUser(){
-        $users = $this->client->getUserProvider()->listItems();
-        print_r($users);
+        $users = $this->client->users()->listItems();
         self::assertNotEmpty($users);
     }
 

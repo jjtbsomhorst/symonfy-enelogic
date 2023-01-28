@@ -75,7 +75,7 @@ class EneLogicClient
         return new OrganisationProvider($this->client);
     }
 
-    public function getUserProvider () {
+    public function users () {
         return new UserProvider($this->client);
     }
 }
